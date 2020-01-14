@@ -1,42 +1,40 @@
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.FunctionalCommand;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class TurnIncrement extends Command {
+public class TurnIncrement extends FunctionalCommand {
   public static boolean scaleTurning = false;
   public TurnIncrement() {
-    // Use requires() here to declare subsystem dependencies
+      super();
+      // Use requires() here to declare subsystem dependencies
   }
 
   // Called just before this Command runs the first time
   @Override
-  protected void initialize() {
+  public void initialize() {
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
-  protected void execute() {
+  public void execute() {
         scaleTurning = true;
   }
   @Override
-  protected void end() {
-       super.end();
+  public void end(boolean interrupted) {
+       super.end(interrupted);
        scaleTurning = false;
-  }
-  @Override
-  protected void interrupted() {
-        super.interrupted();
-        scaleTurning = false;
   }
 
   @Override
-     protected boolean isFinished() {
+  public boolean isFinished() {
      return false;
   }
 
