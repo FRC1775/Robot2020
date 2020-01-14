@@ -9,18 +9,10 @@ package frc.robot;
 
 import java.util.ArrayList;
 
-import org.opencv.core.Mat;
-import org.opencv.core.Rect;
-import org.opencv.core.Scalar;
-import org.opencv.imgproc.Imgproc;
-import org.opencv.core.MatOfPoint;
-
-import edu.wpi.first.cameraserver.CameraServer;
-
 import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
-import edu.wpi.first.vision.VisionThread;
 import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -47,17 +39,6 @@ public class Robot extends TimedRobot {
   private final double RESOLUTION_HEIGHT = 240;
   final double TARGET_WIDTH = (2 * Math.sin(1.318)) + (5.5 * Math.sin(0.2531));
   final double TARGET_HEIGHT = (2 * Math.cos(1.318)) + (5.5 * Math.cos(0.2531));
-  private final double FISH_RESOLUTION_HEIGHT = RESOLUTION_HEIGHT * TARGET_HEIGHT; 
-  private final double FISH_RESOLUTION_WIDTH = RESOLUTION_WIDTH * TARGET_WIDTH; 
-  private final double WIDTH_FOV = .48;
-  private final double HEIGHT_FOV = .353;
-
-  private double midx = 0.0;
-  private double midy = 0.0;
-  private double fieldOfViewHeight = 0;
-  private double fieldOfViewWidth = 0;
-  private double distanceHeight = 0; 
-  private double distanceWidth = 0; 
   public double initAngle = 0;
   public static double initVoltage = 0;
 

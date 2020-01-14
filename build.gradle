@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "edu.wpi.first.GradleRIO" version "2019.1.1"
+    id "edu.wpi.first.GradleRIO" version "2020.1.2"
 }
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
@@ -48,7 +48,7 @@ repositories {
 dependencies {
     compile wpi.deps.wpilib()
     compile wpi.deps.vendor.java()
-    compile "com.kauailabs.navx.frc:navx-java:3.1.344"
+    // compile "com.kauailabs.navx.frc:navx-java:3.1.344"
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)
     nativeDesktopZip wpi.deps.vendor.jni(wpi.platforms.desktop)
     testCompile 'junit:junit:4.12'
