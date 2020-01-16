@@ -1,41 +1,44 @@
 package frc.robot.commands;
 
+import java.util.Set;
+
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class TurnIncrement extends Command {
+public class TurnIncrement implements Command {
   public static boolean scaleTurning = false;
-  public TurnIncrement() {
-    // Use requires() here to declare subsystem dependencies
-  }
 
   // Called just before this Command runs the first time
-  @Override
-  protected void initialize() {
+  
+  public void initialize() {
   }
 
   // Called repeatedly when this Command is scheduled to run
-  @Override
-  protected void execute() {
+  
+  public void execute() {
         scaleTurning = true;
   }
-  @Override
-  protected void end() {
-       super.end();
+  
+  public void end() {
        scaleTurning = false;
   }
-  @Override
-  protected void interrupted() {
-        super.interrupted();
+  
+  public void interrupted() {
         scaleTurning = false;
   }
 
-  @Override
-     protected boolean isFinished() {
+     public boolean isFinished() {
      return false;
   }
+
+
+public Set<Subsystem> getRequirements() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
   // Make this return true when this Command no longer needs to run execute()
 

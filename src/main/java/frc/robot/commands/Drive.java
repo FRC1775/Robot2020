@@ -7,7 +7,10 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import java.util.Set;
+
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.Robot;
 import frc.robot.OI;
 
@@ -15,21 +18,21 @@ import frc.robot.OI;
  * Gets the values of the joysticks on the first driver's controller.
  * The left joystick controls our forward/backward movement, and the right joystick controls turning. 
  */
-public class Drive extends Command {
+public class Drive implements Command {
 
   public Drive() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.motorSubsystem);
+//    requires(Robot.motorSubsystem);
   }
 
   // Called just before this Command runs the first time
-  @Override
-  protected void initialize() {
+  
+  public void initialize() {
   }
 
   // Called repeatedly when this Command is scheduled to run
-  @Override
-  protected void execute() {
+  
+  public void execute() {
 
     double yVal = OI.getLeftJoystick();
     double xVal = OI.getRightJoystick();
@@ -37,9 +40,18 @@ public class Drive extends Command {
     Robot.motorSubsystem.drive(yVal, xVal);
      
   }
+  
+  public void end() {
+ }
+  
  
-  @Override
-  protected boolean isFinished() {
+  
+  public boolean isFinished() {
     return false;
   }
+  
+  public Set<Subsystem> getRequirements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
