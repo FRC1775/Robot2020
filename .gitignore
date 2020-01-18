@@ -26,5 +26,8 @@ hs_err_pid*
 .classpath
 .settings/
 .vscode/
-build/tmp/
-build/debug/
+/.gradle/
+/build/
+/.idea/
+/.settings/
+/.vscode/
