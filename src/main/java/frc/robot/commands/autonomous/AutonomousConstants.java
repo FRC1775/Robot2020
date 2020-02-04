@@ -9,7 +9,9 @@ public final class AutonomousConstants{
 	public static final int ROBOT_LENGTH = 45;
     public static final int ROBOT_WIDTH = 34;
     //Robot length and width to be updated for 2020 :)
-	
-	public static final int FOOT = 12;
+    
+    public static final int FOOT = 12;
+    //Distance to initiation line
+    public static final int INITIATION_LINE = 120;
 
 }
