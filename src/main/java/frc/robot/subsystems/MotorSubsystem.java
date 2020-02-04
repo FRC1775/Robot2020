@@ -27,9 +27,22 @@ import frc.robot.commands.TurnIncrement;
 
   private final static double RAMP_TIME = 400;
   long startTime = 0;
-  double rampFactor;  
- 
- 
+  double rampFactor; 
+  
+  
+	private enum DriveMode {
+		Regular, RotateToAngle, DriveToDistance
+  }
+
+  private static DriveMode driveMode = DriveMode.Regular;
+
+  private void setDriveMode(DriveMode mode) {
+		if (driveMode == mode)
+			return;
+
+		driveMode = mode;
+	}
+	
 
   @Override
   public void initDefaultCommand() {
@@ -81,5 +94,27 @@ import frc.robot.commands.TurnIncrement;
 		return ((RobotMap.driveEncoderLeft.getDistance() - RobotMap.driveEncoderRight.getDistance()) / 2.0);
   }
 
+  public void setDriveDistance(double distance) {
+    setDriveMode(DriveMode.DriveToDistance);
+  }
+
+  public void driveDistance() {
+		SmartDashboard.putNumber("Distance", getDistance());
+  }
+  
+  public void stop() {
+		RobotMap.drive.stopMotor();
+  }
+  
+  public void setRotateAngle(double angle) {
+		setDriveMode(DriveMode.RotateToAngle);
+  }
+
+  public void rotateAngle() {
+		//something should probably go in here :|
+	}
+
+
  
+
 }
