@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.PIDController;
 import edu.wpi.first.wpilibj.PIDSource;
 import edu.wpi.first.wpilibj.PIDSourceType;
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotMap;
@@ -20,13 +20,14 @@ import frc.robot.commands.TurnIncrement;
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  */
-  public class MotorSubsystem extends Subsystem {
+  public class MotorSubsystem implements Subsystem {
   
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
   private final static double RAMP_TIME = 400;
   long startTime = 0;
+<<<<<<< HEAD
   double rampFactor; 
   
   
@@ -46,6 +47,11 @@ import frc.robot.commands.TurnIncrement;
 
   @Override
   public void initDefaultCommand() {
+=======
+  double rampFactor;  
+ 
+   public void initDefaultCommand() {
+>>>>>>> 4bcb334891350f3aab14b686fd883d5e83008211
     // Set the default command for a subsystem here.
     setDefaultCommand(new Drive());
   }
