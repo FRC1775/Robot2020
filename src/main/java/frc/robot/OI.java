@@ -34,7 +34,7 @@ public class OI {
   private static JoystickButton pivotDown;
   private static JoystickButton intakeInButton;
   private static JoystickButton intakeOutButton;
-  private static JoystickButton hatchOffButton; 
+  private static JoystickButton hatchOffButton;
   private static JoystickButton resetGyroButton;
   private static JoystickButton turnIncrement;
 
@@ -67,7 +67,7 @@ public class OI {
     return driverJoystick.getRawAxis(3);
   }
 
-  
+
   public static void turnIncrement(Joystick stick){
     turnIncrement = new JoystickButton(stick, LEFT_BUMPER);
     turnIncrement.whileHeld(new TurnIncrement());

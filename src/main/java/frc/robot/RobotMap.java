@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Encoder;
@@ -52,7 +53,7 @@ public class RobotMap {
   public static DigitalInput liftBottomLimitSwitch;
   public static DigitalInput liftTopLimitSwitch;
   public static DifferentialDrive drive;
-  // public static AHRS gyro;
+  public static AHRS gyro;
   public static Encoder driveEncoderLeft;
   public static Encoder driveEncoderRight; 
   public static AnalogInput pivotEncoder;
@@ -74,8 +75,8 @@ public class RobotMap {
 
     drive = new DifferentialDrive(leftDrive, rightDrive);
 
-    // gyro = new AHRS(Port.kOnboard);
-    // gyro.reset();
+    gyro = new AHRS(Port.kOnboard);
+    gyro.reset();
 
     double distancePerPulse = ((2*Math.PI)/1000);
     // PPR = pulses per revolution
