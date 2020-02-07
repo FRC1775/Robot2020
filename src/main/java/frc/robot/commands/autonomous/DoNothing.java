@@ -1,10 +1,16 @@
 package frc.robot.commands.autonomous;
 
-import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandGroupBase;
 
-public class DoNothing extends CommandGroup {
+public class DoNothing extends CommandGroupBase {
 
 	public DoNothing() {
-		addSequential(new AutonomousStart());
+		sequence(new AutonomousStart());
+	}
+
+	@Override
+	public void addCommands(Command... commands) {
+
 	}
 }

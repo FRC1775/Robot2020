@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "edu.wpi.first.GradleRIO" version "2020.1.2"
+    id "edu.wpi.first.GradleRIO" version "2020.2.2"
 }
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
@@ -40,7 +40,7 @@ def includeDesktopSupport = true
 // Maven central needed for JUnit
 repositories {
     mavenCentral()
-    maven { url "https://www.kauailabs.com/maven2" }
+    maven { url "https://plugins.gradle.org/m2/" }
 }
 
 // Defining my dependencies. In this case, WPILib (+ friends), and vendor libraries.

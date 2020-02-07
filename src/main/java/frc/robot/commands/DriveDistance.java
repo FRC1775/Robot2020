@@ -7,11 +7,14 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
+import java.util.Set;
 
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Subsystem;
 import frc.robot.Robot;
+import frc.robot.subsystems.MotorSubsystem;
 
-public class DriveDistance extends Command {
+public class DriveDistance implements Command {
 	private double distance = 0;
 	// private long startTime = 0;
 
@@ -21,26 +24,28 @@ public class DriveDistance extends Command {
 		this.distance = distance;
 	}
 
+	private void requires(MotorSubsystem motorSubsystem) {
+	}
+
 	@Override
-	protected void initialize() {
+	public void initialize() {
 		Robot.motorSubsystem.setDriveDistance(distance);
 		// startTime = System.currentTimeMillis();
 	}
 
 	@Override
-	protected void execute() {
+	public void execute() {
 		Robot.motorSubsystem.driveDistance();
 	}
 
 	@Override
-	protected void interrupted() {
-		Robot.motorSubsystem.stop();
+	public boolean isFinished() {
+  		return true;
+		// needs to be changed!!>:( )
 	}
 
-	@Override
-	protected boolean isFinished() {
-    return true;
-		//needs to be changed!!>:(   )
+	public Set<Subsystem> getRequirements() {
+		return null;
 	}
 
 }

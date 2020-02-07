@@ -57,8 +57,8 @@ public class Robot extends TimedRobot {
     m_oi = new OI();
     OI.init();
     motorSubsystem = new MotorSubsystem();
-
-    CameraServer.getInstance().startAutomaticCapture();
+    // motorSubsystem.initDefaultCommand();
+    // CameraServer.getInstance().startAutomaticCapture();
      
   }
 

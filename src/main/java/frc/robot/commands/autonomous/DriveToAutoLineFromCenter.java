@@ -9,18 +9,18 @@ package frc.robot.commands.autonomous;
 
 import frc.robot.commands.DriveDistance;
 import frc.robot.commands.RotateToAngle;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandGroupBase;
 
-import edu.wpi.first.wpilibj.command.CommandGroup;
-
-public class DriveToAutoLineFromCenter extends CommandGroup {
+public class DriveToAutoLineFromCenter extends CommandGroupBase {
 
     public DriveToAutoLineFromCenter() {
-    	addSequential(new AutonomousStart());
-    	//addSequential(new DriveDistance((AutonomousConstants.AUTO_LINE - AutonomousConstants.ROBOT_LENGTH) 
-    			//+ AutonomousConstants.FOOT));
-    	addSequential(new DriveDistance(AutonomousConstants.FOOT));
-    	addSequential(new RotateToAngle(18.4));
-    	addSequential(new DriveDistance(84));
-    	
+		sequence(new AutonomousStart(),new DriveDistance(AutonomousConstants.FOOT), 
+				new RotateToAngle(18.4), new DriveDistance(84));
     }
+
+	@Override
+	public void addCommands(Command... commands) {
+
+	}
 }

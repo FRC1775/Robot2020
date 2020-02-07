@@ -27,7 +27,6 @@ import frc.robot.commands.TurnIncrement;
 
   private final static double RAMP_TIME = 400;
   long startTime = 0;
-<<<<<<< HEAD
   double rampFactor; 
   
   
@@ -45,13 +44,7 @@ import frc.robot.commands.TurnIncrement;
 	}
 	
 
-  @Override
   public void initDefaultCommand() {
-=======
-  double rampFactor;  
- 
-   public void initDefaultCommand() {
->>>>>>> 4bcb334891350f3aab14b686fd883d5e83008211
     // Set the default command for a subsystem here.
     setDefaultCommand(new Drive());
   }

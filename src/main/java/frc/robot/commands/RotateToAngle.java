@@ -2,10 +2,14 @@ package frc.robot.commands;
 
 import frc.robot.Robot;
 import frc.robot.RobotMap;
+import frc.robot.subsystems.MotorSubsystem;
 
-import edu.wpi.first.wpilibj.command.Command;
+import java.util.Set;
 
-public class RotateToAngle extends Command{
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Subsystem;
+
+public class RotateToAngle implements Command{
 	private double angle = 0;
 	private long startTime = 0;
 	
@@ -15,19 +19,27 @@ public class RotateToAngle extends Command{
 		this.angle = angle;
 	}
 	
+	private void requires(MotorSubsystem motorSubsystem) {
+	}
+
 	@Override
-	protected void initialize() {
+	public void initialize() {
 		startTime = System.currentTimeMillis();
 		Robot.motorSubsystem.setRotateAngle(this.angle);
 	}
 	
 	@Override
-	protected void execute() {
+	public void execute() {
 		Robot.motorSubsystem.rotateAngle();
 	}
 
 	@Override
-	protected boolean isFinished() {
+	public boolean isFinished() {
 		return System.currentTimeMillis() - startTime > 500 && !RobotMap.gyro.isMoving();
+	}
+
+	@Override
+	public Set<Subsystem> getRequirements() {
+		return null;
 	}
 }
